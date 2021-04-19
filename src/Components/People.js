@@ -58,7 +58,6 @@ const People = () => {
     <button className="previous-btn" onClick={previousPage}>previous</button>
     <button className="next-btn" onClick={nextPage}>Next</button>
     </Actions>
-
   </Container>
   );
 };
