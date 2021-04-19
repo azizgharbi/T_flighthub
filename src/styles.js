@@ -44,8 +44,8 @@ export const PeopleContainer = styled.div`
 
 export const ElementStyle = styled.div`
   margin-bottom: 5px;
-  cursor: pointer;
   .tooltip {
+    cursor: pointer;
     position: relative;
     display: inline-block;
     border-bottom: 1px solid black;
@@ -70,6 +70,7 @@ export const SearchBoxContainer = styled.div`
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
+  font-size:20px;
   box-sizing: border-box;
 }
 `;

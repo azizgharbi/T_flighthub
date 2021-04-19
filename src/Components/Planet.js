@@ -8,6 +8,12 @@ const Planet = ({ planetUrl }) => {
   const [planet, setPlanet] = useState(null);
   const [loader, setLoader] = useState(true);
 
+  function formtDate (date) {
+    // eslint-disable-next-line no-useless-escape
+    const regex = /\d{4}\-\d{2}\-\d{2}/g;
+    return date.match(regex);
+  }
+
   useEffect(() => {
     async function fetchData () {
       const { name, created } = await getInfos(planetUrl);
@@ -26,7 +32,7 @@ const Planet = ({ planetUrl }) => {
           : (
           <div className="tooltip">
             {planet.name}
-            <span className="tooltiptext">Created:{planet.created}</span>
+            <span className="tooltiptext">Created: {formtDate(planet.created)}</span>
           </div>
             )}
       </ElementStyle>

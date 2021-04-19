@@ -7,8 +7,7 @@ import { getPeople } from './Services';
 
 import {
   GlobalStyles,
-  Loader,
-  Container
+  Loader
 } from './styles';
 
 export default function App () {
@@ -25,14 +24,14 @@ export default function App () {
   }, []);
 
   return (
-    <Container className="App">
-      <GlobalStyles />
+    <>
+      <GlobalStyles/>
       {loader
         ? <Loader size={'20px'} />
         : <>
       <Search setData={setData}></Search>
       <People data={data} />
       </>}
-    </Container>
+    </>
   );
 }
