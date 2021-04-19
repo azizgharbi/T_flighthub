@@ -3,6 +3,7 @@ import React, { useReducer, useEffect } from 'react';
 
 import Planet from './Planet';
 import Starship from './Starship';
+import Search from './Search';
 
 import { reducer, initialSate, FETCH_PEOPLE, INCREMENT_COUNTER, DECREMENT_COUNTER } from '../Store';
 import { getPeople } from '../Services';
@@ -30,6 +31,8 @@ const People = () => {
   }
 
   return (
+    <>
+  <Search dispatch={dispatch}></Search>
   <Container>
     {
      !state.loading
@@ -61,6 +64,7 @@ const People = () => {
        : <Loader size={'20px'}/>
     }
   </Container>
+  </>
   );
 };
 

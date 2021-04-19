@@ -1,7 +1,6 @@
 import React from 'react';
 
 import People from './Components/People';
-import Search from './Components/Search';
 
 import {
   GlobalStyles
@@ -11,7 +10,6 @@ export default function App () {
   return (
     <>
       <GlobalStyles/>
-      <Search />
       <People />
     </>
   );

@@ -1,13 +1,11 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
 import { searchPeople } from '../Services';
 import { SearchBoxContainer } from '../styles';
 
-import { reducer, initialSate, FETCH_PEOPLE } from '../Store';
+import { FETCH_PEOPLE } from '../Store';
 
-const Search = () => {
-  const [, dispatch] = useReducer(reducer, initialSate);
-
+const Search = ({ dispatch }) => {
   let time;
 
   async function handleSearch (event) {
