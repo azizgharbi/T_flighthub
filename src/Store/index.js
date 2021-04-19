@@ -1,12 +1,11 @@
+
+import { FETCH_PEOPLE, INCREMENT_COUNTER, DECREMENT_COUNTER } from './constants';
+
 export const initialSate = {
   loading: true,
   results: [],
   counter: 2
 };
-
-export const FETCH_PEOPLE = 'FETCH_PEOPLE';
-export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
-export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 
 function increment (counter) {
   if (counter < 9) {

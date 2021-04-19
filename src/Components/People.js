@@ -5,7 +5,8 @@ import Planet from './Planet';
 import Starship from './Starship';
 import Search from './Search';
 
-import { reducer, initialSate, FETCH_PEOPLE, INCREMENT_COUNTER, DECREMENT_COUNTER } from '../Store';
+import { reducer, initialSate } from '../Store';
+import { FETCH_PEOPLE, INCREMENT_COUNTER, DECREMENT_COUNTER } from '../Store/constants';
 import { getPeople } from '../Services';
 
 import { Container, PeopleContainer, Loader, Actions } from '../styles';

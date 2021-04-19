@@ -3,7 +3,7 @@ import React from 'react';
 import { searchPeople } from '../Services';
 import { SearchBoxContainer } from '../styles';
 
-import { FETCH_PEOPLE } from '../Store';
+import { FETCH_PEOPLE } from '../Store/constants';
 
 const Search = ({ dispatch }) => {
   let time;
