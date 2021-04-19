@@ -1,5 +1,5 @@
 
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
 import Planet from './Planet';
 import Starship from './Starship';
@@ -11,6 +11,11 @@ import { Container, PeopleContainer, Loader, Actions } from '../styles';
 
 const People = () => {
   const [state, dispatch] = useReducer(reducer, initialSate);
+
+  useEffect(async () => {
+    const { results } = await getPeople();
+    dispatch({ type: FETCH_PEOPLE, payload: results });
+  }, []);
 
   async function nextPage () {
     dispatch({ type: INCREMENT_COUNTER });
