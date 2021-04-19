@@ -14,9 +14,12 @@ import { Container, PeopleContainer, Loader, Actions } from '../styles';
 const People = () => {
   const [state, dispatch] = useReducer(reducer, initialSate);
 
-  useEffect(async () => {
-    const { results } = await getPeople();
-    dispatch({ type: FETCH_PEOPLE, payload: results });
+  useEffect(() => {
+    async function fetchData () {
+      const { results } = await getPeople();
+      dispatch({ type: FETCH_PEOPLE, payload: results });
+    }
+    fetchData();
   }, []);
 
   async function nextPage () {
