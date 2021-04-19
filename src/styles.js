@@ -24,6 +24,16 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  text-transform: uppercase;
+
+  .container-message{
+    display: block;
+    font-size: 24px;
+    margin-top: 25px;
+    color: #f5cd89;
+    padding:0px 5px;
+    font-weight:bold;
+  }
 `;
 
 export const PeopleContainer = styled.div`
@@ -44,7 +54,7 @@ export const PeopleContainer = styled.div`
     font-weight:bold;
   }
 
-  .user-message{
+  .people-message{
     display: block;
     margin-top: 25px;
     color: #ff28bb;
