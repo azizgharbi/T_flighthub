@@ -43,7 +43,7 @@ const People = () => {
                 ? <>
               <h3 className="title">Starships:</h3>
               {starships.map((link, i) =>
-                <Starship key={i} starshipUrl={link} ></Starship>
+                <Starship key={i} starshipUrl={link} />
               )}
               </>
                 : <span className="people-message"> 0 Starships to display </span>
@@ -52,7 +52,7 @@ const People = () => {
         </PeopleContainer>
          );
        })
-       : <Loader size={'20px'}></Loader>
+       : <Loader size={'20px'}/>
     }
     <Actions>
     <button className="previous-btn" onClick={previousPage}>previous</button>

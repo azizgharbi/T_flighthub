@@ -1,7 +1,7 @@
 export const initialSate = {
   loading: true,
   results: [],
-  counter: 1
+  counter: 2
 };
 
 export const FETCH_PEOPLE = 'FETCH_PEOPLE';
@@ -16,7 +16,7 @@ function increment (counter) {
 }
 
 function decrement (counter) {
-  if (counter > 0) {
+  if (counter > 1) {
     return counter - 1;
   }
   return counter;
