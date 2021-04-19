@@ -87,15 +87,16 @@ export const ElementStyle = styled.div`
 `;
 
 export const SearchBoxContainer = styled.div`
+  padding: 5px;
   input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  font-size:20px;
-  outline-color:#3bcccc;
-  color: #c894d1;
-  border:none;
-  font-weight:bold;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size:20px;
+    outline-color:#3bcccc;
+    color: #c894d1;
+    border:none;
+    font-weight:bold;
+    box-sizing: border-box;
 }
 `;
