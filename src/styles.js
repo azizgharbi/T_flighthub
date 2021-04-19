@@ -118,5 +118,11 @@ export const Actions = styled.div`
   .next-btn,.previous-btn{
     cursor: pointer;
     margin:5px;
+    color: #fff;
+    border:none;
+    padding: 5px;
+    font-size:20px;
+    background-color:#3bcccc;
+    outline-color:#3bcccc;
   }
 `;

@@ -33,7 +33,8 @@ const People = () => {
   <Container>
     {
      !state.loading
-       ? state.results.map(({ name, homeworld, starships }, index) => {
+       ? <>
+       {state.results.map(({ name, homeworld, starships }, index) => {
          return (
         <PeopleContainer key={index}>
           <span className="name">{name}</span>
@@ -51,13 +52,14 @@ const People = () => {
           </div>
         </PeopleContainer>
          );
-       })
+       })}
+        <Actions>
+          <button className="previous-btn" onClick={previousPage}>previous</button>
+          <button className="next-btn" onClick={nextPage}>Next</button>
+        </Actions>
+       </>
        : <Loader size={'20px'}/>
     }
-    <Actions>
-    <button className="previous-btn" onClick={previousPage}>previous</button>
-    <button className="next-btn" onClick={nextPage}>Next</button>
-    </Actions>
   </Container>
   );
 };
