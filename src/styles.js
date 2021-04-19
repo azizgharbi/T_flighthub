@@ -32,34 +32,55 @@ export const PeopleContainer = styled.div`
   padding: 20px;
   margin: 5px;
   background-color: #f5cd89;
+
   .name {
     font-size: 24px;
     color: #3bcccc;
+    font-weight:bold;
   }
+
+  .title{
+    color: #3bcccc;
+    font-weight:bold;
+  }
+
+  .user-message{
+    display: block;
+    margin-top: 25px;
+    color: #ff28bb;
+    font-weight:400;
+  }
+
   .list {
+    font-weight:bold;
     margin-top: 10px;
+    margin-bottom: 10px;
     color: #5076e3;
   }
 `;
 
 export const ElementStyle = styled.div`
   margin-bottom: 5px;
+
   .tooltip {
     cursor: pointer;
     position: relative;
     display: inline-block;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid #c894d1;
   }
+
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
-    background-color: black;
-    color: #fff;
+    background-color: #fff;
+    color: #c894d1;
+    font-weight:bold;
     text-align: center;
     padding: 5px 0;
     position: absolute;
     z-index: 1;
   }
+  
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
@@ -71,6 +92,8 @@ export const SearchBoxContainer = styled.div`
   padding: 12px 20px;
   margin: 8px 0;
   font-size:20px;
+  color: #c894d1;
+  font-weight:bold;
   box-sizing: border-box;
 }
 `;

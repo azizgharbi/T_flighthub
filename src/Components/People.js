@@ -17,12 +17,13 @@ const People = ({ data }) => {
             <Planet key={index} planetUrl={homeworld}/>
             { starships.length
               ? <>
-            <h3>Starships:</h3>
+            <h3 className="title">Starships:</h3>
             {starships.map((link, index) =>
-                <Starship key={index} starshipUrl={link} ></Starship>
+              <Starship key={index} starshipUrl={link} ></Starship>
             )}
             </>
-              : null}
+              : <span className="user-message"> 0 Starships to display </span>
+            }
         </div>
       </PeopleContainer>
       );
