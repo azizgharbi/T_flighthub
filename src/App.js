@@ -16,7 +16,6 @@ export default function App () {
 
   useEffect(async () => {
     const { results } = await getPeople();
-    console.log(results);
     dispatch({ type: FETCH_PEOPLE, payload: results });
   }, []);
 

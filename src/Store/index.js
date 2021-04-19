@@ -26,17 +26,20 @@ export const reducer = (state = initialSate, action) => {
   switch (action.type) {
     case FETCH_PEOPLE:
       return {
+        ...state,
         loading: false,
         results: action.payload,
         counter: state.counter
       };
     case INCREMENT_COUNTER:
       return {
+        ...state,
         loading: true,
         counter: increment(state.counter)
       };
     case DECREMENT_COUNTER:
       return {
+        ...state,
         loading: true,
         counter: decrement(state.counter)
       };
