@@ -1,18 +1,35 @@
 
-import React from 'react';
+import React, { useReducer } from 'react';
 
 import Planet from './Planet';
 import Starship from './Starship';
 
-import { Container, PeopleContainer } from '../styles';
+import { reducer, initialSate, FETCH_PEOPLE, INCREMENT_COUNTER, DECREMENT_COUNTER } from '../Store';
+import { getPeople } from '../Services';
 
-const People = ({ data }) => {
+import { Container, PeopleContainer, Loader, Actions } from '../styles';
+
+const People = () => {
+  const [state, dispatch] = useReducer(reducer, initialSate);
+
+  async function nextPage () {
+    dispatch({ type: INCREMENT_COUNTER });
+    const { results } = await getPeople(state.counter);
+    dispatch({ type: FETCH_PEOPLE, payload: results });
+  }
+
+  async function previousPage () {
+    dispatch({ type: DECREMENT_COUNTER });
+    const { results } = await getPeople(state.counter);
+    dispatch({ type: FETCH_PEOPLE, payload: results });
+  }
+
   return (
   <Container>
     {
-      data.length
-        ? data.map(({ name, homeworld, starships }, index) => {
-          return (
+     state.results
+       ? state.results.map(({ name, homeworld, starships }, index) => {
+         return (
         <PeopleContainer key={index}>
           <span className="name">{name}</span>
           <div className="list">
@@ -28,11 +45,17 @@ const People = ({ data }) => {
               }
           </div>
         </PeopleContainer>
-          );
-        })
-        : <span className="container-message"> user is not found </span>
+         );
+       })
+       : <Loader size={'20px'}></Loader>
     }
-  </Container>);
+    <Actions>
+    <button className="previous-btn" onClick={previousPage}>previous</button>
+    <button className="next-btn" onClick={nextPage}>Next</button>
+    </Actions>
+
+  </Container>
+  );
 };
 
 export default People;

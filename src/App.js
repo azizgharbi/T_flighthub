@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useReducer } from 'react';
 
 import People from './Components/People';
 import Search from './Components/Search';
 
 import { getPeople } from './Services';
+import { reducer, initialSate, FETCH_PEOPLE } from './Store';
 
 import {
   GlobalStyles,
@@ -11,27 +12,24 @@ import {
 } from './styles';
 
 export default function App () {
-  const [data, setData] = useState([]);
-  const [loader, setLoader] = useState(true);
+  const [state, dispatch] = useReducer(reducer, initialSate);
 
   useEffect(async () => {
-    async function fetchData () {
-      const { results } = await getPeople();
-      setData(results);
-      setLoader(false);
-    }
-    fetchData();
+    const { results } = await getPeople();
+    console.log(results);
+    dispatch({ type: FETCH_PEOPLE, payload: results });
   }, []);
 
   return (
     <>
       <GlobalStyles/>
-      {loader
+      {state.loading
         ? <Loader size={'20px'} />
         : <>
-      <Search setData={setData}></Search>
-      <People data={data} />
-      </>}
+      <Search></Search>
+      <People />
+      </>
+      }
     </>
   );
 }

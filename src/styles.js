@@ -111,3 +111,12 @@ export const SearchBoxContainer = styled.div`
     box-sizing: border-box;
 }
 `;
+
+export const Actions = styled.div`
+  padding: 5px;
+  
+  .next-btn,.previous-btn{
+    cursor: pointer;
+    margin:5px;
+  }
+`;
