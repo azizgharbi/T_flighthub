@@ -25,7 +25,6 @@ function decrement (counter) {
 export const reducer = (state = initialSate, action) => {
   switch (action.type) {
     case FETCH_PEOPLE:
-      console.log(action);
       return {
         ...state,
         loading: false,
