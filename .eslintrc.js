@@ -20,7 +20,8 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off',
-    semi: [2, 'always']
+    'no-extra-semi': 'off',
+    semi: [1, 'always']
 
   }
 };
