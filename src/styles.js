@@ -88,6 +88,7 @@ export const ElementStyle = styled.div`
 
 export const SearchBoxContainer = styled.div`
   padding: 5px;
+  
   input[type=text] {
     width: 100%;
     padding: 12px 20px;
