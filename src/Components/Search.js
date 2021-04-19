@@ -1,17 +1,15 @@
 import React from 'react';
+
 import { searchPeople } from '../Services';
-// Style
 import { SearchBoxContainer } from '../styles';
 
-const Search = ({ setData, setLoader }) => {
+const Search = ({ setData }) => {
   let time;
   async function handleSearch (event) {
     clearTimeout(time);
     time = setTimeout(async function () {
-      setLoader(true);
       const { results } = await searchPeople(event.target.value);
       setData(results);
-      setLoader(false);
     }, 500);
   }
 

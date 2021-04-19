@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import { getInfos } from '../Services';
-// Style
+
 import { Loader, ElementStyle } from '../styles';
 
 const Planet = ({ planetUrl }) => {

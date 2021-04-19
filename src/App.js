@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
 import People from './Components/People';
 import Search from './Components/Search';
-// helpers
+
 import { getPeople } from './Services';
 
-// Style
 import {
   GlobalStyles,
   Loader,
@@ -30,7 +30,7 @@ export default function App () {
       {loader
         ? <Loader size={'20px'} />
         : <>
-      <Search setData={setData} setLoader={setLoader}></Search>
+      <Search setData={setData}></Search>
       <People data={data} />
       </>}
     </Container>
