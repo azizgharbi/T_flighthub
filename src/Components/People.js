@@ -32,38 +32,38 @@ const People = () => {
 
   return (
     <>
-  <Search dispatch={dispatch}></Search>
-  <Container>
-    {
-     !state.loading
-       ? <>
-       {state.results.map(({ name, homeworld, starships }, index) => {
-         return (
-        <PeopleContainer key={index}>
-          <span className="name">{name}</span>
-          <div className="list">
-              <Planet key={index} planetUrl={homeworld}/>
-              { starships.length
-                ? <>
-              <h3 className="title">Starships:</h3>
-              {starships.map((link, i) =>
-                <Starship key={i} starshipUrl={link} />
-              )}
-              </>
-                : <span className="people-message"> 0 Starships to display </span>
-              }
-          </div>
-        </PeopleContainer>
-         );
-       })}
-        <Actions>
-          <button className="previous-btn" onClick={previousPage}>previous</button>
-          <button className="next-btn" onClick={nextPage}>Next</button>
-        </Actions>
-       </>
-       : <Loader size={'20px'}/>
-    }
-  </Container>
+      <Search dispatch={dispatch}></Search>
+      <Container>
+        {
+         !state.loading
+           ? <>
+           {state.results.map(({ name, homeworld, starships }, index) => {
+             return (
+            <PeopleContainer key={index}>
+              <span className="name">{name}</span>
+              <div className="list">
+                  <Planet key={index} planetUrl={homeworld}/>
+                  { starships.length
+                    ? <>
+                  <h3 className="title">Starships:</h3>
+                  {starships.map((link, i) =>
+                    <Starship key={i} starshipUrl={link} />
+                  )}
+                  </>
+                    : <span className="people-message"> 0 Starships to display </span>
+                  }
+              </div>
+            </PeopleContainer>
+             );
+           })}
+            <Actions>
+              <button className="previous-btn" onClick={previousPage}>previous</button>
+              <button className="next-btn" onClick={nextPage}>Next</button>
+            </Actions>
+           </>
+           : <Loader size={'20px'}/>
+        }
+      </Container>
   </>
   );
 };
