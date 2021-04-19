@@ -2,6 +2,8 @@ import Request from '../Request.js';
 
 const baseUrl = 'https://swapi.dev/api';
 
+// https://swapi.dev/api/people
+
 export const getPeople = async function () {
   const peoples = await Request(`${baseUrl}/people`);
   return peoples;
