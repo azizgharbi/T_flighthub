@@ -1,4 +1,4 @@
-import styled, { keyframes, createGlobalStyle } from 'styled-components'
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Notable');
@@ -6,11 +6,11 @@ export const GlobalStyles = createGlobalStyle`
     background-color:#c894d1;
     font-family: 'Notable', sans-serif;
   }
-`
+`;
 
 const spinner = keyframes`
  to {transform: rotate(360deg);}
-`
+`;
 
 export const Loader = styled.div`
   width: ${props => props.size};
@@ -18,13 +18,13 @@ export const Loader = styled.div`
   border-radius: 50%;
   border: 5px dotted #ff28bb;
   animation: ${spinner} 1s infinite;
-`
+`;
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 export const PeopleContainer = styled.div`
   flex: 30%;
@@ -40,7 +40,7 @@ export const PeopleContainer = styled.div`
     margin-top: 10px;
     color: #5076e3;
   }
-`
+`;
 
 export const ElementStyle = styled.div`
   margin-bottom: 5px;
@@ -63,4 +63,13 @@ export const ElementStyle = styled.div`
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-`
+`;
+
+export const SearchBoxContainer = styled.div`
+  input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+`;

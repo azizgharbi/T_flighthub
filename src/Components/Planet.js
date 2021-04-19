@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { getInfos } from '../Services'
+import React, { useState, useEffect } from 'react';
+import { getInfos } from '../Services';
 // Style
-import { Loader, ElementStyle } from '../styles'
+import { Loader, ElementStyle } from '../styles';
 
 const Planet = ({ planetUrl }) => {
-  const [planet, setPlanet] = useState(null)
-  const [loader, setLoader] = useState(true)
+  const [planet, setPlanet] = useState(null);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     async function fetchData () {
-      const { name, created } = await getInfos(planetUrl)
-      setPlanet({ name, created })
-      setLoader(false)
+      const { name, created } = await getInfos(planetUrl);
+      setPlanet({ name, created });
+      setLoader(false);
     }
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
   return (
       <ElementStyle>
         {loader
@@ -29,7 +29,7 @@ const Planet = ({ planetUrl }) => {
           </div>
             )}
       </ElementStyle>
-  )
-}
+  );
+};
 
-export default Planet
+export default Planet;

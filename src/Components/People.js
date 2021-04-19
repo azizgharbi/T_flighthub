@@ -1,9 +1,9 @@
 
-import React from 'react'
+import React from 'react';
 
-import Planet from './Planet'
-import Starship from './Starship'
-import { PeopleContainer } from '../styles'
+import Planet from './Planet';
+import Starship from './Starship';
+import { PeopleContainer } from '../styles';
 
 const People = ({ data }) =>
   data.map(({ name, homeworld, starships }, index) => {
@@ -23,7 +23,7 @@ const People = ({ data }) =>
 
         </div>
       </PeopleContainer>
-    )
-  })
+    );
+  });
 
-export default People
+export default People;
