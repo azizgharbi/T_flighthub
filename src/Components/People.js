@@ -32,7 +32,7 @@ const People = () => {
   return (
   <Container>
     {
-     state.results
+     !state.loading
        ? state.results.map(({ name, homeworld, starships }, index) => {
          return (
         <PeopleContainer key={index}>
